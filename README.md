@@ -44,6 +44,12 @@ Single-page web app for browsing country data powered by the REST Countries API.
 
 Country data comes from [restcountries.com](https://restcountries.com). Each card uses `cca2` codes to load flag images from [flagcdn.com](https://flagcdn.com).
 
+## Self Reflection
+
+Working on Country Data Explorer pushed me to treat a static website as a full product rather than just markup stitched together. I designed the layout in plain HTML and CSS, then wired up the controls in vanilla JavaScript so search, region filtering, and favourites all feel instant. Fetching live data from the REST Countries API forced me to think about loading states, error handling, and how to normalize JSON into something the UI can consume. I also learned to lean on `localStorage` for persisting favourites so the page feels personal even without a backend. Refactoring the card rendering into small helper functions made the code easier for future me to revisit.
+
+Beyond the browser, I practiced a proper build-and-release loop. I opened incremental commits that described the UI work, pushed them to GitHub, and used pull request previews to sanity check rendering on different devices. Publishing with GitHub Pages gave me experience with static hosting quirks like relative asset paths and cache busting, and I documented those lessons in the README so someone else can deploy quickly. Going forward I want to automate the workflow with a simple CI job that runs linting and maybe a Lighthouse report so regressions are easier to catch. Overall this project demystified the path from idea to a live web app that anyone can bookmark.
+
 ## Future Ideas
 
 - Add pagination or infinite scroll for large result sets.
